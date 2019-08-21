@@ -91,7 +91,7 @@ pipeline{
                  bat '''
                      docker login -u %DOCKER_USER_NAME% -p %DOCKER_PASSWORD% 
                      docker build --tag=mydockerimage .
-                     docker tag mydockerimage %DOCKER_USER_NAME%/%PROJECT_NAME%
+                     docker tag mydockerimage %DOCKER_USER_NAME%/web_api_docker
                       
                      docker push %DOCKER_USER_NAME%/%PROJECT_NAME%	
                 '''
