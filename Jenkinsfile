@@ -89,7 +89,7 @@ pipeline{
             }
             steps {
                  bat '''
-                     docker build --tag=%PROJECT_NAME%:mydockerimage 
+                     docker build --tag %PROJECT_NAME%:mydockerimage 
                      docker tag %PROJECT_NAME%:mydockerimage %DOCKER_USER_NAME%/%PROJECT_NAME%:mydockerimage
                      docker login -u %DOCKER_USER_NAME% -p %DOCKER_PASSWORD%  
                      docker push %DOCKER_USER_NAME%/%PROJECT_NAME%:mydockerimage	
