@@ -64,7 +64,7 @@ pipeline{
             steps{
                 bat '''
                     echo '=========Sonarqube begin=============='
-                    dotnet %MSBUILD_DLL_PATH% begin /k:"web_api_using_sonarqube" /d:sonar.host.url="http://localhost:9000" /d:sonar.login=%SONAR_PROJECT_TOKEN%
+                    dotnet %MSBUILD_DLL_PATH% begin /k:"RidhimaAPI" /d:sonar.host.url="http://localhost:9000" /d:sonar.login=%SONAR_PROJECT_TOKEN%
                     echo '====================Restore Start ================'
                     dotnet restore %SOLUTION_PATH% --source https://api.nuget.org/v3/index.json
                     echo '=====================Restore Completed============'
