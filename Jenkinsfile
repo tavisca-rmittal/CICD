@@ -72,7 +72,7 @@ pipeline{
                     dotnet build 
                     echo '=====================Build  Completed============'
                     echo '====================Test Start ================'
-                    dotnet test %TEST_SOLUTION_PATH%
+                    dotnet test %SOLUTION_PATH%
                     echo '=====================test Completed============'
                     dotnet %MSBUILD_DLL_PATH% end /d:sonar.login=%SONAR_PROJECT_TOKEN%
                     echo '============Sonarqube end======================'		    
