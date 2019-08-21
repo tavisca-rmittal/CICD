@@ -50,17 +50,17 @@ pipeline{
             defaultValue: "C:/Users/rmittal/Desktop/TAVISCA/sonarqube-7.9.1/sonar-scanner-msbuild-4.6.2.2108-netcoreapp2.0/SonarScanner.MSBuild.dll"
         )
 
-        choice(
+      /*  choice(
             name: "STAGE_FOR_EITHER_BUILD_OR_DEPLOY",
             choices: ["Build","Deploy"],
             description: "Tick what you want to do"
-        )
+        )*/
     }
     stages{
         stage('Build'){
-            when{
+          /*  when{
                 expression{params.STAGE_FOR_EITHER_BUILD_OR_DEPLOY == "Build" || params.STAGE_FOR_EITHER_BUILD_OR_DEPLOY == "Deploy"}
-            }
+            }*/
             steps{
                 bat '''
                     echo '=========Sonarqube begin=============='
@@ -84,9 +84,9 @@ pipeline{
             }
         }
         stage ('Deploy') {
-            when{
+          /*  when{
                 expression{params.STAGE_FOR_EITHER_BUILD_OR_DEPLOY == "Deploy"}
-            }
+            }*/
             steps {
                  bat '''
                      docker login -u %DOCKER_USER_NAME% -p %DOCKER_PASSWORD% 
